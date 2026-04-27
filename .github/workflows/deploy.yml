@@ -46,6 +46,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
           lfs: true
+          submodules: recursive
 
       - name: Compare hash
         id: use_content
@@ -78,6 +79,7 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
           lfs: true
+          submodules: recursive
 
       - name: Checkout LFS objects
         run: git lfs checkout
