@@ -116,6 +116,9 @@ jobs:
           DOCKER_BUILD_CHECKS_ANNOTATIONS: false
         with:
           context: .
+          # Build-time API requests bypass Cloudflare but keep hostname/TLS validation.
+          add-hosts: |
+            mx.dick.plus:152.53.167.123
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
